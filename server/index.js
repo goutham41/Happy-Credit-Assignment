@@ -22,11 +22,11 @@ app.use(
     credentials: true,
   }),
 );
-app.use("/server", (req,res)=>{
-    res.send(`server is working ${process.env.PORT}`);
+app.use("/server", (req, res) => {
+  res.send(`server is working ${process.env.PORT}`);
 });
-app.use("/posts",PostsRoutes)
-app.use("/message",MessageRoutes);
+app.use("/posts", PostsRoutes);
+app.use("/message", MessageRoutes);
 app.listen(process.env.PORT, async () => {
   await connection;
   console.log("connected to db");
